@@ -27,7 +27,7 @@ This is a **fork** of [NetherstormX/NetherBot](https://github.com/NetherstormX/N
 - Panels are **drag-movable**, **scalable** (`+`/`-`, 0.5–2.0), state is saved per character in `NetherbotDB`.
 - Tooltips on every button showing the exact command being sent.
 - i18n: English, French, German, Italian, zh-CN, zh-TW.
-- Slash commands: `/netherbot` and `/nb`.
+- Slash commands: `/botsquad` and `/nb`.
 
 ## Tested On
 
@@ -58,7 +58,7 @@ That's it — target a bot and press a button, or click `Lookup` → pick a clas
 
 ## Usage
 
-1. Open the main panel via `/nb`, `/netherbot show` or the minimap button.
+1. Open the main panel via `/nb`, `/botsquad show` or the minimap button.
 2. **Bots behaviour** — Follow / Stand / Stop / Slack, distance Low/Medium/High.
 3. **Management** — UnHide, Hide, Recall, Kill. Revive to resurrect dead bots.
 4. **Admin** — Add/Remove/Delete with a target or by bot ID; Move, Bot-Info (prints `.npcbot info`), Recall, Revive, Lookup.
@@ -70,9 +70,9 @@ All commands are sent via `/say` chat and executed by the server's `.npcbot` com
 
 | Command | Action |
 |---|---|
-| `/nb` or `/netherbot` | toggle panel on/off |
-| `/netherbot show` | show the panel |
-| `/netherbot hide` | hide all panels |
+| `/nb` or `/botsquad` | toggle panel on/off |
+| `/botsquad show` | show the panel |
+| `/botsquad hide` | hide all panels |
 
 ## Origin & changes
 
@@ -81,7 +81,7 @@ This project is a fork of the MIT-unspecified [NetherstormX/NetherBot](https://g
 minimap button module was added.
 
 ### Rewritten
-- `netherbot.lua` was a single monolithic file (action buttons + raid frames + lookup all mixed together).
+- The original `netherbot.lua` was a single monolithic file (action buttons + raid frames + lookup all mixed together).
   Now it is structured: a `STYLE` theme table, reusable helpers (`MakeButton`, `MakeText`, `SetPanelBackdrop`, `Command`).
 - New dark UI theme with accent bar, hover states and tooltips on every button.
 - Compact panel layout (4×3 button grid + footer) instead of the oversized 200×200 frame.
@@ -148,7 +148,7 @@ TrinityCore / AzerothCore. Одна кнопка — нужная `.npcbot`-ко
   в `NetherbotDB`.
 - Тултипы на каждой кнопке показывают точную отправляемую команду.
 - i18n: английский, французский, немецкий, итальянский, zh-CN, zh-TW.
-- Slash-команды: `/netherbot` и `/nb`.
+- Slash-команды: `/botsquad` и `/nb`.
 
 ## Проверено на
 
@@ -179,7 +179,7 @@ TrinityCore / AzerothCore. Одна кнопка — нужная `.npcbot`-ко
 
 ## Использование
 
-1. Панель открывается через `/nb`, `/netherbot show` или кнопку на миникарте.
+1. Панель открывается через `/nb`, `/botsquad show` или кнопку на миникарте.
 2. **Поведение ботов** — Follow / Stand / Stop / Slack, дистанция Low / Medium / High.
 3. **Управление** — UnHide, Hide, Recall, Kill; Revive воскрешает мёртвых ботов.
 4. **Admin** — Add/Remove/Delete по цели или ID бота; Move, Bot-Info (выполняет `.npcbot info`),
@@ -192,9 +192,9 @@ TrinityCore / AzerothCore. Одна кнопка — нужная `.npcbot`-ко
 
 | Команда | Действие |
 |---|---|
-| `/nb` или `/netherbot` | показать/скрыть панель |
-| `/netherbot show` | показать панель |
-| `/netherbot hide` | скрыть все панели |
+| `/nb` или `/botsquad` | показать/скрыть панель |
+| `/botsquad show` | показать панель |
+| `/botsquad hide` | скрыть все панели |
 
 ## Откуда исходник и что изменено
 
@@ -203,7 +203,7 @@ TrinityCore / AzerothCore. Одна кнопка — нужная `.npcbot`-ко
 модуль кнопки на миникарте.
 
 ### Переписано
-- `netherbot.lua` был единым монолитным файлом (кнопки + рейд-фреймы + поиск вперемешку). Теперь код
+- Оригинальный `netherbot.lua` был единым монолитным файлом (кнопки + рейд-фреймы + поиск вперемешку). Теперь код
   структурирован: таблица стилей `STYLE`, переиспользуемые хелперы (`MakeButton`, `MakeText`,
   `SetPanelBackdrop`, `Command`).
 - Новая тёмная тема с акцентной полосой, подсветкой при наведении и тултипами на каждой кнопке.

@@ -1,7 +1,7 @@
-﻿NetherBot.InitLocale()
-local i18n = NetherBot.I18n
+﻿BotSquad.InitLocale()
+local i18n = BotSquad.I18n
 
-NetherbotDB = NetherbotDB or {}
+BotSquadDB = BotSquadDB or {}
 
 ---------------------------------------------------------------------------
 -- Theme
@@ -151,7 +151,7 @@ title:SetText(i18n("BotSquad"))
 local function SetScale(s)
   s = Clamp(s, 0.5, 2.0)
   frame:SetScale(s)
-  NetherbotDB.scale = s
+  BotSquadDB.scale = s
 end
 
 -- Scale buttons
@@ -186,8 +186,8 @@ end)
 -- Drag handle (header strip) and frame drag
 local function SavePosition()
   local p, _, _, x, y = frame:GetPoint()
-  NetherbotDB.point = p
-  NetherbotDB.x, NetherbotDB.y = x, y
+  BotSquadDB.point = p
+  BotSquadDB.x, BotSquadDB.y = x, y
 end
 
 local header = CreateFrame("Button", nil, frame)
@@ -398,7 +398,7 @@ adminTitle:SetText(i18n("Admin"))
 
 -- Generic bot id prompt
 local function PromptBot(action)
-  StaticPopupDialogs["NETHERBOT_PROMPT"] = {
+  StaticPopupDialogs["BOTSQUAD_PROMPT"] = {
     text         = i18n("Enter NPCBOT ID:"),
     button1      = i18n("Ok"),
     button2      = i18n("Cancel"),
@@ -414,7 +414,7 @@ local function PromptBot(action)
       end
     end,
   }
-  StaticPopup_Show("NETHERBOT_PROMPT")
+  StaticPopup_Show("BOTSQUAD_PROMPT")
 end
 
 local function TargetOrPrompt(action)
@@ -456,7 +456,7 @@ AddGrid(adminFrame, {
 AddGrid(adminFrame, {
   { label = "Move", onClick = Command(".npcbot move"), tooltip = ".npcbot move" },
   { label = "Delete", color = STYLE.red, border = { 0.60, 0.32, 0.32, 0.90 }, onClick = function()
-      StaticPopupDialogs["NETHERBOT_DELETE"] = {
+      StaticPopupDialogs["BOTSQUAD_DELETE"] = {
         text         = i18n("Are you sure you want to delete?"),
         button1      = i18n("Yes"),
         button2      = i18n("No"),
@@ -465,7 +465,7 @@ AddGrid(adminFrame, {
         hideOnEscape = true,
         OnAccept     = function() TargetOrPrompt("delete") end,
       }
-      StaticPopup_Show("NETHERBOT_DELETE")
+      StaticPopup_Show("BOTSQUAD_DELETE")
     end, tooltip = ".npcbot delete" },
   { label = "Revive", color = STYLE.green, border = { 0.30, 0.55, 0.35, 0.90 }, onClick = Command(".npcbot revive"), tooltip = i18n("Revive Bots") },
   { label = "Lookup", onClick = function()
@@ -541,21 +541,21 @@ local loaded = CreateFrame("Frame")
 loaded:RegisterEvent("ADDON_LOADED")
 loaded:SetScript("OnEvent", function(self, event, addonName)
   if addonName ~= "BotSquad" then return end
-  if NetherbotDB.point then
+  if BotSquadDB.point then
     frame:ClearAllPoints()
-    frame:SetPoint(NetherbotDB.point, UIParent, NetherbotDB.point, NetherbotDB.x or 0, NetherbotDB.y or 0)
+    frame:SetPoint(BotSquadDB.point, UIParent, BotSquadDB.point, BotSquadDB.x or 0, BotSquadDB.y or 0)
   end
-  if NetherbotDB.scale then
-    frame:SetScale(NetherbotDB.scale)
+  if BotSquadDB.scale then
+    frame:SetScale(BotSquadDB.scale)
   end
 end)
 
 ---------------------------------------------------------------------------
 -- Slash commands
 ---------------------------------------------------------------------------
-SLASH_NETHERBOT1 = "/netherbot"
-SLASH_NETHERBOT2 = "/nb"
-SlashCmdList.NETHERBOT = function(msg)
+SLASH_BOTSQUAD1 = "/botsquad"
+SLASH_BOTSQUAD2 = "/nb"
+SlashCmdList.BOTSQUAD = function(msg)
   msg = strlower(msg or "")
   local allHidden = function()
     frame:Hide()
@@ -574,7 +574,7 @@ SlashCmdList.NETHERBOT = function(msg)
   end
 end
 
-NetherBot.ToggleMain = function()
+BotSquad.ToggleMain = function()
   if frame:IsShown() then
     frame:Hide()
     adminFrame:Hide()

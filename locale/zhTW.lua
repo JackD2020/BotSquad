@@ -1,5 +1,4 @@
-NetherBot.Locales.zhTW = {
-	["NetherBot - NPCBOT Tool"] = "NPCBots工具",
+BotSquad.Locales.zhTW = {
 	["Admin"] = "管理",
 	["Follow"] = "跟隨",
 	["Stand"] = "站立",

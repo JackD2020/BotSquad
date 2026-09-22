@@ -3,7 +3,7 @@
 ## Notes: BotSquad (NetherBot Reforged) - npcbot tool
 ## Author: JackD2020
 ## Version: 1.2
-## SavedVariables: NetherbotDB
+## SavedVariables: BotSquadDB
 
 locale.lua
 locale\zhCN.lua
@@ -12,5 +12,5 @@ locale\itIT.lua
 locale\grGR.lua
 locale\frFR.lua
 
-netherbot.lua
+botsquad.lua
 minimapbutton.lua

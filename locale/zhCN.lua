@@ -1,5 +1,4 @@
-NetherBot.Locales.zhCN = {
-	["NetherBot - NPCBOT Tool"] = "NPCBots工具",
+BotSquad.Locales.zhCN = {
 	["Admin"] = "管理",
 	["Follow"] = "跟随",
 	["Stand"] = "站立",

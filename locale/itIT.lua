@@ -1,5 +1,4 @@
-NetherBot.Locales.itIT = {
-	["NetherBot - NPCBOT Tool"] = "NetherBot - Strumento NPCBOT",
+BotSquad.Locales.itIT = {
 	["Admin"] = "Admin",
 	["Follow"] = "Segui",
 	["Stand"] = "Stai fermo",

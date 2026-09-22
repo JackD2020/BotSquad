@@ -1,5 +1,4 @@
-NetherBot.Locales.grGR = {
-	["NetherBot - NPCBOT Tool"] = "NetherBot - NPCBOT-Tool",
+BotSquad.Locales.grGR = {
 	["Admin"] = "Admin",
 	["Follow"] = "Folgen",
 	["Stand"] = "Stehen",

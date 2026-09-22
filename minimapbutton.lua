@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------
 -- Minimap toggle button
 --------------------------------------------------------------------------
-local mm = CreateFrame("Button", "NetherBotMinimapButton", Minimap)
+local mm = CreateFrame("Button", "BotSquadMinimapButton", Minimap)
 mm:SetFrameStrata("MEDIUM")
 mm:SetFrameLevel(8)
 mm:SetWidth(31)
@@ -64,12 +64,12 @@ end)
 
 mm:SetScript("OnDragStop", function()
   mm:SetScript("OnUpdate", nil)
-  NetherbotDB.minimapAngle = CursorAngle()
-  Position(NetherbotDB.minimapAngle)
+  BotSquadDB.minimapAngle = CursorAngle()
+  Position(BotSquadDB.minimapAngle)
 end)
 
 mm:SetScript("OnClick", function()
-  NetherBot.ToggleMain()
+  BotSquad.ToggleMain()
 end)
 
 mm:SetScript("OnMouseDown", function()
@@ -92,4 +92,4 @@ mm:SetScript("OnLeave", function()
   GameTooltip:Hide()
 end)
 
-Position(NetherbotDB and NetherbotDB.minimapAngle or 135)
+Position(BotSquadDB and BotSquadDB.minimapAngle or 135)

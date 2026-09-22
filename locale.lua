@@ -1,14 +1,14 @@
 
-NetherBot = {
+BotSquad = {
 	Locales = {},
 }
 
 local _usedLocale
-function NetherBot.InitLocale()
-	_usedLocale = NetherBot.Locales[GetLocale()]
+function BotSquad.InitLocale()
+	_usedLocale = BotSquad.Locales[GetLocale()]
 end
 
-function NetherBot.I18n(text)
+function BotSquad.I18n(text)
 	if _usedLocale then
 		return _usedLocale[text] or text
 	else
