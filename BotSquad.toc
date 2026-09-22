@@ -1,0 +1,16 @@
+## Interface: 30300
+## Title: BotSquad
+## Notes: BotSquad (NetherBot Reforged) - npcbot tool
+## Author: JackD2020
+## Version: 1.2
+## SavedVariables: NetherbotDB
+
+locale.lua
+locale\zhCN.lua
+locale\zhTW.lua
+locale\itIT.lua
+locale\grGR.lua
+locale\frFR.lua
+
+netherbot.lua
+minimapbutton.lua
