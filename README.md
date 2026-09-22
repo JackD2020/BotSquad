@@ -5,12 +5,12 @@ A World of Warcraft **3.3.5a** addon for fast control of **NPCBots** on TrinityC
 This is a **fork** of [NetherstormX/NetherBot](https://github.com/NetherstormX/NetherBot) with a rewritten UI and a number of fixes and additions. See [Origin & changes](#origin--changes) for the full comparison.
 
 <p align="center">
-  <img src="screenshots/main_panel.png" width="35%">
-  <img src="screenshots/admin_panel.png" width="55%">
+  <img src="screenshots/main_panel.png" width="17%">
+  <img src="screenshots/admin_panel.png" width="27%">
 </p>
 <p align="center">
-  <img src="screenshots/lookup_panel.png" width="35%">
-  <img src="screenshots/minimap_button.png" width="45%">
+  <img src="screenshots/lookup_panel.png" width="17%">
+  <img src="screenshots/minimap_button.png" width="22%">
 </p>
 
 ## Features
