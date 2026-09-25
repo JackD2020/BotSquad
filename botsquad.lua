@@ -446,7 +446,7 @@ end
 AddGrid(adminFrame, {
   { label = "Add",    onClick = function() TargetOrPrompt("add") end,                  tooltip = ".npcbot add" },
   { label = "Remove", onClick = function() TargetOrPrompt("remove") end,               tooltip = ".npcbot remove" },
-  { label = "Recall", onClick = Command(".npcbot recall"),                             tooltip = ".npcbot recall" },
+  { label = "Recall", onClick = Command(".npcbot recall teleport"),                    tooltip = ".npcbot recall teleport" },
   { label = "Bot-Info", onClick = function()
       SendChatMessage(".npcbot info", "SAY")
       DoEmote("BONK")
@@ -502,7 +502,7 @@ AddRow({
 AddRow({
   { label = "UnHide", icon = "Interface\\Icons\\ability_hunter_beastcall", cmd = ".npcbot unhide" },
   { label = "Hide",   icon = "Interface\\Icons\\ability_stealth",          cmd = ".npcbot hide" },
-  { label = "Recall", icon = "Interface\\Icons\\Inv_misc_rune_01",         cmd = ".npcbot recall" },
+  { label = "Recall", icon = "Interface\\Icons\\Inv_misc_rune_01",         cmd = ".npcbot recall teleport" },
   { label = "Kill",   icon = "Interface\\Icons\\INV_Misc_Key_14",          cmd = ".npcbot kill", color = STYLE.red, border = { 0.60, 0.32, 0.32, 0.90 } },
 }, ROW_2)
 

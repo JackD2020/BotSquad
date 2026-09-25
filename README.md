@@ -24,7 +24,7 @@ This is a **fork** of [NetherstormX/NetherBot](https://github.com/NetherstormX/N
   Add/Remove/Delete work on your current target or by manually entered bot ID.
 - **Lookup panel**: scrollable, sorted class list (18 classes incl. custom NPCBots classes) with mouse-wheel support, plus a "Spawn BOT ID" box.
 - **Minimap button**: click to toggle the panel, drag to reposition (position is saved).
-- Panels are **drag-movable**, **scalable** (`+`/`-`, 0.5–2.0), state is saved per character in `NetherbotDB`.
+- Panels are **drag-movable**, **scalable** (`+`/`-`, 0.5–2.0), state is saved per character in `BotSquadDB`.
 - Tooltips on every button showing the exact command being sent.
 - i18n: English, French, German, Italian, zh-CN, zh-TW.
 - Slash commands: `/botsquad` and `/nb`.
@@ -54,7 +54,7 @@ That's it — target a bot and press a button, or click `Lookup` → pick a clas
 - Client: World of Warcraft **WotLK 3.3.5a** (build 12340)
 - Server: AzerothCore / TrinityCore with the **NPCBots** module ([trickerer/Trinity-Bots](https://github.com/trickerer/Trinity-Bots))
 - Language: **Lua 5.1**, WoW FrameXML API (`ActionButtonTemplate`-style frames, `SavedVariables`)
-- `SavedVariables: NetherbotDB` (window position, scale, minimap angle)
+- `SavedVariables: BotSquadDB` (window position, scale, minimap angle)
 
 ## Usage
 
@@ -85,11 +85,11 @@ minimap button module was added.
   Now it is structured: a `STYLE` theme table, reusable helpers (`MakeButton`, `MakeText`, `SetPanelBackdrop`, `Command`).
 - New dark UI theme with accent bar, hover states and tooltips on every button.
 - Compact panel layout (4×3 button grid + footer) instead of the oversized 200×200 frame.
-- Panels are drag-movable and scalable; position/scale are saved (`NetherbotDB`).
+- Panels are drag-movable and scalable; position/scale are saved (`BotSquadDB`).
 
 ### Fixed bugs from the original
-- `NetherbotDB = {}` discarded saved settings on every load → now `NetherbotDB = NetherbotDB or {}`.
-- Recall buttons sent the typo'd command `.npcbot recal teleport` → now `.npcbot recall`.
+- `NetherbotDB = {}` discarded saved settings on every load → now `BotSquadDB = BotSquadDB or {}`.
+- Recall buttons sent the typo'd command `.npcbot recal teleport` → now `.npcbot recall teleport`.
 - Add/Remove/Delete with a target sent an **empty** command (`.npcbot add `) — the target name was only
   echoed to chat. Now the target name is really inserted into the command.
 - "Spawn Bot" sent its command to the **Guild** channel → now uses `/say`.
@@ -145,7 +145,7 @@ TrinityCore / AzerothCore. Одна кнопка — нужная `.npcbot`-ко
   кастомные классы NPCBots) с колесом мыши + поле «Spawn BOT ID».
 - **Кнопка на миникарте**: клик открывает/закрывает панель, перетаскивание меняет позицию (сохраняется).
 - Панели **перетаскиваются** и **масштабируются** (`+`/`-`, 0.5–2.0), состояние сохраняется на персонажа
-  в `NetherbotDB`.
+  в `BotSquadDB`.
 - Тултипы на каждой кнопке показывают точную отправляемую команду.
 - i18n: английский, французский, немецкий, итальянский, zh-CN, zh-TW.
 - Slash-команды: `/botsquad` и `/nb`.
@@ -175,7 +175,7 @@ TrinityCore / AzerothCore. Одна кнопка — нужная `.npcbot`-ко
 - Клиент: World of Warcraft **WotLK 3.3.5a** (build 12340)
 - Сервер: AzerothCore / TrinityCore с модулем **NPCBots** ([trickerer/Trinity-Bots](https://github.com/trickerer/Trinity-Bots))
 - Язык: **Lua 5.1**, WoW FrameXML API, `SavedVariables`
-- `SavedVariables: NetherbotDB` (позиция окна, масштаб, угол кнопки на миникарте)
+- `SavedVariables: BotSquadDB` (позиция окна, масштаб, угол кнопки на миникарте)
 
 ## Использование
 
@@ -208,11 +208,11 @@ TrinityCore / AzerothCore. Одна кнопка — нужная `.npcbot`-ко
   `SetPanelBackdrop`, `Command`).
 - Новая тёмная тема с акцентной полосой, подсветкой при наведении и тултипами на каждой кнопке.
 - Компактная раскладка панели (сетка кнопок 4×3 + нижняя панель) вместо громоздкой рамки 200×200.
-- Панели перетаскиваются и масштабируются; позиция/масштаб сохраняются (`NetherbotDB`).
+- Панели перетаскиваются и масштабируются; позиция/масштаб сохраняются (`BotSquadDB`).
 
 ### Исправленные баги оригинала
-- `NetherbotDB = {}` сбрасывал сохранённые настройки при каждом запуске → теперь `NetherbotDB = NetherbotDB or {}`.
-- Кнопки Recall отправляли команду с опечаткой `.npcbot recal teleport` → теперь `.npcbot recall`.
+- `NetherbotDB = {}` сбрасывал сохранённые настройки при каждом запуске → теперь `BotSquadDB = BotSquadDB or {}`.
+- Кнопки Recall отправляли команду с опечаткой `.npcbot recal teleport` → теперь `.npcbot recall teleport`.
 - Add/Remove/Delete по цели отправляли **пустую** команду (`.npcbot add `) — имя цели только
   выводилось в чат. Теперь имя цели реально подставляется в команду.
 - Кнопка «Spawn Bot» отправляла команду в канал **Guild** → теперь `/say`.
